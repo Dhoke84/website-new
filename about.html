@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Font Awesome file link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="responsive.css">
+
+    <title>Alfarah</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="images/new-logo.png" alt="LOGO IMAGE">
+            </div>
+
+            <!-- Menu icon for mobile view -->
+            <div class="fas fa-bars" id="menu-icon"></div>
+            <div class="fas fa-times" id="close-icon"></div>
+
+            <div class="header-link">
+              <a href="/faq.html" id="faq-link">FAQs</a>
+              <a href="index.html#get-help" id="contact-link">Get in Touch</a>
+              <a href="#" id="arabic-link">العربية</a>
+              <div class="search-bar">
+                  <input type="text" placeholder="Search...">
+                  <i class="fas fa-search"></i>
+                  <i class="fas fa-times"></i>
+              </div>
+          </div>
+        </div>
+
+        <nav class="main-nav" id="main-nav">
+          <ul>
+              <li><a href="/index.html" class="nav-link">Home</a></li>
+              <li>
+                  <a href="/about.html" class="nav-link">Learn More<i class="fa-solid fa-caret-down dropdown-icon"></i></a>
+                  <ul>
+                      <li><a href="/about.html" class="nav-link">Our Team</a></li>
+                      <li><a href="#" class="nav-link">Our Mission</a></li>
+                      <li><a href="#" class="nav-link">Our Values</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="/services.html" class="nav-link">Services <i class="fa-solid fa-caret-down dropdown-icon"></i></a>
+                  <ul>
+                      <li><a href="#" class="nav-link">Consulting</a></li>
+                      <li><a href="#" class="nav-link">Development</a></li>
+                      <li><a href="#" class="nav-link">Support</a></li>
+                  </ul>
+              </li>
+              <li><a href="/facility.html" class="nav-link">Facilities</a></li>
+              <li><a href="/careers.html" class="nav-link">Careers</a></li>
+              <li>
+                  <a href="#" class="nav-link" id="application-form-link">Application Form 
+                      <i class="fas fa-download"></i>
+                  </a>
+              </li>
+          </ul>
+      </nav>
+      
+      <!-- Modal Structure -->
+      <div id="download-modal" class="modal">
+          <div class="modal-content">
+              <span class="close-btn">&times;</span>
+              <h2>Download Application Form</h2>
+              <p>Are you sure you want to download the form?</p>
+              <button id="confirm-download">Yes, Download</button>
+              <button id="cancel-download">Cancel</button>
+          </div>
+      </div>
+      
+    </header>
+
+    <section class="about-us">
+        <div class="about-content">
+            <div class="about-header">
+                <h1>Learn More About Who We Are !</h1>
+               
+              </div>
+            <p>A dedicated team of professionals passionate about contributing to the well-being of children, especially those of determination. Our mission is to support and empower children, helping them reach their fullest potential through specialized care and individualized attention
+               </p>
+        </div>
+        <div class="about-image">
+            <img src="images/about-container.png" alt="About Us Image">
+        </div>
+
+        
+    </section>
+    <section>
+        <div class="info-card-container">
+            <div class="info-card">
+              <div class="icon">
+                <img src="icons/Comp 10 (0;00;00;00).png" alt="Icon 1">
+              </div>
+              <div class="text">
+                <h3>Our Mission</h3>
+                <p>Tailor rehabilitation to each child, ensuring progress toward their full potential.</p>
+              </div>
+            </div>
+          
+            <div class="info-card">
+              <div class="icon">
+                <img src="icons/Comp 35 (0;00;00;00).png" alt="Icon 2">
+              </div>
+              <div class="text">
+                <h3>Our Vision</h3>
+                <p>Lead in empowering children of determination and building community understanding.</p>
+              </div>
+            </div>
+          
+            <div class="info-card">
+              <div class="icon">
+                <img src="icons/Comp 33 (0;00;00;00).png" alt="Icon 3">
+              </div>
+              <div class="text">
+                <h3>Our Values</h3>
+                <p>Respect- Dedication - Honesty- Acceptance- Collaboration- Consistency. 
+                </p>
+              </div>
+            </div>
+          </div>
+          
+    </section>
+
+    <section class="image-gallery">
+        <div class="slider-container">
+          <div class="slider">
+            <img src="images/8.jpg" alt="Image 1">
+            <img src="images/9.jpg" alt="Image 2">
+            <img src="images/47.jpg" alt="Image 3">
+            <img src="images/18.jpg" alt="Image 4">
+            <!-- Duplicate images for continuous effect -->
+            <img src="images/8.jpg" alt="Image 1">
+            <img src="images/9.jpg" alt="Image 2">
+            <img src="images/47.jpg" alt="Image 3">
+            <img src="images/18.jpg" alt="Image 4">
+            <img src="images/8.jpg" alt="Image 1">
+            <img src="images/9.jpg" alt="Image 2">
+            <img src="images/47.jpg" alt="Image 3">
+            <img src="images/18.jpg" alt="Image 4">
+            <img src="images/8.jpg" alt="Image 1">
+            <img src="images/9.jpg" alt="Image 2">
+            <img src="images/47.jpg" alt="Image 3">
+            <img src="images/18.jpg" alt="Image 4">
+          </div>
+        </div>
+      </section>
+      
+      
+    <section class="our-team">
+        <div class="team-header">
+          <h2 class="team-header-heading">Our Team</h2>
+          <p>One way we define our success is by our team. Alfarah team is a tight-knit, multicultural group of competent, knowledgeable, and passionate professionals in rehabilitation and therapy interventions. We believe our team is well-equipped to help children develop new skills and reach their best. By partnering with parents to reach realistic goals, our team ensures success</p>
+        </div>
+        
+       
+
+        <div class="team-cards">
+            <div class="team-card">
+              <img src="images/business-man-curly-cute-handsome-guy-black-suit-close-up-smiling.jpg" alt="Team Member 1">
+              <h3>John Doe</h3>
+              <p>Lead Developer</p>
+              <p class="team-description">John specializes in backend development and has over 10 years of experience in the tech industry.</p>
+            </div>
+            
+            <div class="team-card">
+              <img src="images/medium-shot-smiley-man-posing.jpg" alt="Team Member 2">
+              <h3>Jane Smith</h3>
+              <p>Project Manager</p>
+              <p class="team-description">Jane excels at managing complex projects and ensuring smooth operations across the team.</p>
+            </div>
+            
+            <div class="team-card">
+              <img src="images/smiling-brunette-girl-posing-with-coat.jpg" alt="Team Member 3">
+              <h3>Emily Brown</h3>
+              <p>UI/UX Designer</p>
+              <p class="team-description">Emily is passionate about creating intuitive and beautiful user interfaces and experiences.</p>
+            </div>
+            
+            <div class="team-card">
+              <img src="images/business-man-curly-cute-handsome-guy-black-suit-close-up-smiling.jpg" alt="Team Member 4">
+              <h3>Michael Lee</h3>
+              <p>QA Engineer</p>
+              <p class="team-description">Michael ensures our products meet the highest standards of quality and reliability.</p>
+            </div>
+          </div>
+
+          <div class="team-cards" style="margin-top: 5rem;">
+            <div class="team-card">
+              <img src="images/business-man-curly-cute-handsome-guy-black-suit-close-up-smiling.jpg" alt="Team Member 1">
+              <h3>John Doe</h3>
+              <p>Lead Developer</p>
+              <p class="team-description">John specializes in backend development and has over 10 years of experience in the tech industry.</p>
+            </div>
+            
+            <div class="team-card">
+              <img src="images/medium-shot-smiley-man-posing.jpg" alt="Team Member 2">
+              <h3>Jane Smith</h3>
+              <p>Project Manager</p>
+              <p class="team-description">Jane excels at managing complex projects and ensuring smooth operations across the team.</p>
+            </div>
+            
+            <div class="team-card">
+              <img src="images/smiling-brunette-girl-posing-with-coat.jpg" alt="Team Member 3">
+              <h3>Emily Brown</h3>
+              <p>UI/UX Designer</p>
+              <p class="team-description">Emily is passionate about creating intuitive and beautiful user interfaces and experiences.</p>
+            </div>
+            
+            <div class="team-card">
+              <img src="images/business-man-curly-cute-handsome-guy-black-suit-close-up-smiling.jpg" alt="Team Member 4">
+              <h3>Michael Lee</h3>
+              <p>QA Engineer</p>
+              <p class="team-description">Michael ensures our products meet the highest standards of quality and reliability.</p>
+            </div>
+          </div>
+      </section>
+
+<script src="script.js"></script>
+      
+      </body>
+      </html>
+      
+
+    
+    

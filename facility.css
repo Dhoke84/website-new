@@ -1,0 +1,23 @@
+:root {
+    --color: #003C71;
+    --coralpink: #FF688B;
+    --skyblue: #00BFFF;
+    --amber: #FFC700;
+    --green: #95C92C;
+    --white: #F2F4EF;
+  }
+
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+  
+    transition: all 0.2s linear;
+    text-decoration: none;
+  }
+  
+  body {
+    background-color: var(--white);
+  }

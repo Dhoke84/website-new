@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Font Awesome file link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="responsive.css">
+
+    <title>Alfarah</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="images/new-logo.png" alt="LOGO IMAGE">
+            </div>
+
+            <!-- Menu icon for mobile view -->
+            <div class="fas fa-bars" id="menu-icon"></div>
+            <div class="fas fa-times" id="close-icon"></div>
+
+            <div class="header-link">
+                <a href="/faq.html" id="faq-link">FAQs</a>
+                <a href="index.html#get-help" id="contact-link">Get in Touch</a>
+                <a href="#" id="arabic-link">العربية</a>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+        </div>
+
+        <nav class="main-nav" id="main-nav">
+          <ul>
+              <li><a href="/index.html" class="nav-link">Home</a></li>
+              <li>
+                  <a href="/about.html" class="nav-link">Learn More<i class="fa-solid fa-caret-down dropdown-icon"></i></a>
+                  <ul>
+                      <li><a href="/about.html" class="nav-link">Our Team</a></li>
+                      <li><a href="#" class="nav-link">Our Mission</a></li>
+                      <li><a href="#" class="nav-link">Our Values</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="/services.html" class="nav-link">Services <i class="fa-solid fa-caret-down dropdown-icon"></i></a>
+                  <ul>
+                      <li><a href="#" class="nav-link">Consulting</a></li>
+                      <li><a href="#" class="nav-link">Development</a></li>
+                      <li><a href="#" class="nav-link">Support</a></li>
+                  </ul>
+              </li>
+              <li><a href="/facility.html" class="nav-link">Facilities</a></li>
+              <li><a href="/careers.html" class="nav-link">Careers</a></li>
+              <li>
+                  <a href="#" class="nav-link" id="application-form-link">Application Form 
+                      <i class="fas fa-download"></i>
+                  </a>
+              </li>
+          </ul>
+      </nav>
+      
+      <!-- Modal Structure -->
+      <div id="download-modal" class="modal">
+          <div class="modal-content">
+              <span class="close-btn">&times;</span>
+              <h2>Download Application Form</h2>
+              <p>Are you sure you want to download the form?</p>
+              <button id="confirm-download">Yes, Download</button>
+              <button id="cancel-download">Cancel</button>
+          </div>
+      </div>
+      
+    </header>
+    <section class="careers-section" style="height: 84vh; background-color:#F2F4EF ;">
+        <div class="careers-content">
+          <div class="careers-header">
+            <h1>Careers</h1>
+            <p>We are glad that you are interested in joining our team! Available posts will be announced here, or you can send your resume to</p>
+            <!-- <p><span class="email-icon">📧</span><a href="mailto:hr@alfarahcenter.com">hr@alfarahcenter.com</a></p> -->
+            <a href="mailto:hr@alfarahcenter.com" class="send-resume-btn">Send Resume</a>
+          </div>
+        </div>
+        <div class="careers-image">
+          <img src="images/about-container.png" alt="Careers Image">
+        </div>
+      </section>
+      
+      
+
+      
+     
+      
+
+<script src="script.js"></script>
+      
+      </body>
+      </html>
+      
+
+    
+    

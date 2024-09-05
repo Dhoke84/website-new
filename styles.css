@@ -1,0 +1,1409 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+  --color: #003C71;
+  --coralpink: #FF688B;
+  --skyblue: #00BFFF;
+  --amber: #FFC700;
+  --green: #95C92C;
+  --white: #F2F4EF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  
+  transition: all 0.2s linear;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  overflow-x: hidden;
+}
+/* For Webkit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Adjust the width as needed */
+  height: 8px; /* Smaller height for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+  background: #f2f4ef; /* Background color of the track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #003C71, #005F99); /* Gradient color for the scrollbar */
+  border-radius: 10px; /* Roundness of the scrollbar thumb */
+  border: 2px solid #f2f4ef; /* Add border for a rounded effect */
+  min-height: 30px; /* Ensures the thumb height is not too small */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; /* Makes the scrollbar thinner */
+  scrollbar-color: linear-gradient(180deg, #003C71, #005F99) #f2f4ef; /* Gradient for thumb and color for track */
+  scrollbar-radius: 10px; /* Rounded corners for the scrollbar */
+}
+
+
+.header {
+  display: block;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 8rem;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(236, 234, 234, 0.5); /* White shadow effect */
+}
+
+
+.header .header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .header-container .header-logo img {
+  width: 20vw;
+}
+
+.header .logo {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.header .header-container .header-link {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: right;
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.header .header-container .header-link li {
+  margin: 0 1rem; /* Add space between list items */
+}
+
+.header .header-container .header-link a {
+  position: relative;
+  text-decoration: none;
+  color: var(--color);
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0 2rem;
+  transition: color 0.3s ease;
+}
+
+/* Underline only under the text */
+.header .header-container .header-link a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3.5px;
+  bottom: -10px;
+  left: 0;
+  background-color: var(--green);
+  transition: width 0.3s ease;
+}
+
+.header .header-container .header-link a:hover::after,
+.header .header-container .header-link a.active::after {
+  width: 100%;
+}
+
+.header .header-container .header-link a:hover {
+  color: var(--color-hover); /* Optional: Change text color on hover */
+}
+
+
+.search-bar {
+  position: relative;
+  transition: width 0.3s ease;
+}
+
+.search-bar input {
+  width: 0;
+  padding: 10px 40px 10px 20px;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+  transition: width 0.3s ease;
+}
+
+.search-bar.expanded input {
+  width: 300px; /* Adjust as needed */
+  border: 3px solid var(--green);
+}
+
+.search-bar i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #003C71;
+  cursor: pointer;
+}
+
+.search-bar .fa-search {
+  display: block;
+}
+
+.search-bar .fa-times {
+  display: none;
+}
+
+.search-bar.expanded .fa-search {
+  display: none;
+}
+
+.search-bar.expanded .fa-times {
+  display: block;
+}
+
+.search-bar input::placeholder {
+  color: #aaa;
+}
+
+/* Main Navigation Styles */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.main-nav ul li {
+  position: relative;
+}
+
+.main-nav ul li a {
+  color: var(--color);
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 2rem 7rem 0 0;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.main-nav ul li a:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0.3rem;
+  background-color: #FFC700;
+  transition: width 0.3s ease;
+  margin: 0.5rem auto 0;
+}
+
+.main-nav ul li a.active:after,
+.main-nav ul li a:hover:after {
+  width: 100%;
+}
+
+/* Dropdown Menu Styles */
+.main-nav ul li ul {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f8f8f8;
+  border: 0.2rem solid whitesmoke;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+}
+
+.main-nav ul li ul li {
+  width: 200px; /* Width of the dropdown items */
+}
+
+.main-nav ul li ul li a {
+  padding: 10px 20px;
+  color: var(--color);
+  font-weight: 500;
+}
+
+.main-nav ul li ul li a:hover {
+  background-color: #e0e0e0; /* Background color on hover */
+}
+
+/* Dropdown Icon */
+.dropdown-icon {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* Show dropdown on hover */
+.main-nav ul li:hover > ul {
+  display: block;
+}
+
+/* Show dropdown on click */
+.main-nav ul li.active > ul {
+  display: block;
+}
+
+.dropdown-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Adjustments to the dropdown icon rotation */
+.fa-caret-up {
+  transform: rotate(180deg);
+}
+
+.fa-download{
+  padding-left: 10px;
+}
+/* Media Queries */
+.header .fa-bars,
+.header .fa-times {
+  display: none;
+}
+
+/* Modal background styling */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Darker background with opacity */
+  backdrop-filter: blur(5px); /* Optional: Adds a blur effect to the background */
+}
+
+/* Modal content styling */
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  width: 80%;
+  max-width: 450px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Adds shadow effect */
+  animation: slide-down 0.3s ease-out; /* Smooth slide-down animation */
+}
+
+/* Modal title */
+.modal-content h2 {
+  font-size: 2rem;
+  color: var(--color);
+  margin-bottom: 1rem;
+}
+
+/* Modal text */
+.modal-content p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Close button styling */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #555;
+}
+/* Modal background styling */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Darker background with opacity */
+  backdrop-filter: blur(5px); /* Optional: Adds a blur effect to the background */
+}
+
+/* Modal content styling */
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  width: 100%;
+  max-width: 550px;
+  height: 40vh;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Adds shadow effect */
+  animation: slide-down 0.3s ease-out; /* Smooth slide-down animation */
+}
+
+/* Modal title */
+.modal-content h2 {
+  margin-top: 5rem;
+  font-size: 2.5rem;
+  color: var(--color);
+  margin-bottom: 1rem;
+}
+
+/* Modal text */
+.modal-content p {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Close button styling */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 3rem;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #000000;
+}
+
+/* Modal buttons */
+.modal button {
+  margin: 1rem 0.5rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Confirm button styling */
+#confirm-download {
+  background-color: var(--color);
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+#confirm-download:hover {
+  background-color: #012442;
+}
+
+/* Cancel button styling */
+#cancel-download {
+  background-color: #f5f5f5;
+  color: #555;
+  font-size: 1.5rem;
+}
+
+#cancel-download:hover {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+/* Animation for modal */
+@keyframes slide-down {
+  from {
+      transform: translateY(-30px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+
+.home-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 8rem;
+  justify-content: center;
+  min-height: 100vh; /* Full viewport height */
+ /* Background color */
+  padding: 1rem  2rem;
+  text-align: left; /* Center text in the section */
+  overflow: hidden; /* Hide overflow for a cleaner look */
+}
+
+.home-text {
+  flex: 1;
+  max-width: 600px; /* Limit the text width */
+  margin-right: 2rem; /* Space between text and image */
+}
+
+.home-text h1 {
+  font-size: 7rem;
+  margin-bottom: 1rem;
+  color: var(--color); /* Use your primary color */
+  line-height: 1.2; /* Adjust line spacing */
+}
+
+.home-text h2 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  color: var(--color); /* Use your primary color */
+  line-height: 1.4; 
+}
+.home-text h2 span {
+  margin-top: 10rem;
+ 
+}
+
+.home-text p {
+  font-size: 1.9rem;
+  color: #333; /* Darker text color for readability */
+  line-height: 1.6;
+}
+
+.gradient-button {
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color);/* Text color */
+  background: linear-gradient(90deg, #FFC700, #FFC700); /* Gradient using shades of #003C71 */
+  border: none;
+  width: 30%;
+  margin-top: 2rem;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.2s ease-in-out;
+}
+
+.gradient-button:hover {
+  transform: translateY(-3px); /* Lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.gradient-button:active {
+  transform: translateY(0); /* Remove lift effect on click */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Revert to original shadow */
+}
+
+.home-image {
+  flex: 1;
+  max-width: 600px; /* Limit the image width */
+  position: relative; /* Position relative for overlay */
+}
+
+.home-image {
+  position: relative; /* Position relative for overlay */
+  z-index: 1; /* Ensure the primary image is on top */
+}
+.image-over-side {
+  position: absolute;
+  bottom: 5rem;
+  right: 1rem;
+  width: 10%; /* Adjust width as needed */
+  height: 60%; /* Adjust height as needed */
+  background: url('./images/end.png') no-repeat center center; /* Use your image path */
+  background-size: contain; /* Ensure the image is fully visible and maintains its aspect ratio */
+  background-position: center center; /* Center the image within the div */
+  z-index: -1; /* Place it behind other content */
+  /* Optional: Add blur effect if needed */
+  /* Optional: Adjust opacity if needed */
+}
+
+
+
+
+.home-image img {
+  width: 100%;
+  margin-bottom: 10rem; ;
+  height: auto;
+  border-radius: 8px; /* Rounded corners */
+/* Subtle shadow */
+  position: relative; /* Ensure the image is above the blob */
+  z-index: 1; /* Ensure the image is above the blob */
+}
+
+
+.colorful-text {
+  text-transform: lowercase;
+  background: linear-gradient(45deg, #95C92C,#95C92C, #95C92C); /* Gradient color */
+  -webkit-background-clip: text; /* Clip the background to text  #00BFFF*/
+  -webkit-text-fill-color: transparent; /* Make the text color transparent to show the background */
+  font-weight: bold; /* Optional: make the text bold */
+}
+
+
+.about-section {
+position: relative;
+  padding: 4rem 13rem;
+  height: 90vh;
+  background-color: #f9f9f9; /* Background color for the section */
+}
+.about-text {
+  padding-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.about-header {
+  margin-bottom: 2rem;
+}
+
+.about-header h1 {
+  font-size: 3.5rem;
+  color: var(--color); /* Primary color */
+  position: relative; /* Needed for positioning the ::after pseudo-element */
+  display: inline-block; /* Allow the pseudo-element to span the text width */
+  margin-bottom: 0.9rem; /* Space between text and underline */
+}
+
+.about-header h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.9rem; /* Position the underline just below the text */
+  width: 100%;
+  height: 0.4rem; /* Thickness of the underline */
+  background: linear-gradient(90deg, 
+              #FF688B,
+              #FF688B); /* Gradient with your brand colors */
+  border-radius: 5px; /* Rounded corners for the underline */
+}
+
+
+
+.about-content p {
+  font-size: 1.6rem;
+  color: #6d6b6b;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 8rem;
+  gap: 1rem; /* Space between cards */
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 191, 255, 0.7); 
+  padding: 2rem;
+
+  text-align: left;
+  width: 400px; /* Card width */
+}
+
+.card-icon {
+  width: 60px; /* Icon width */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: .2rem; 
+  margin-left: 1rem;
+  background-color: var(--white);
+  border-radius: 15rem;/* Space between icon and text */
+}
+
+.card h3 {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  padding: 0 1rem;
+  color: var(--color);
+}
+
+.card p {
+  font-size: 1.5rem;
+  color: #6d6b6b;
+  text-align: justify;
+  padding: 0 1rem;
+  width: 360px; /* Increase width slightly */
+
+  hyphens: auto; /* Automatically hyphenate words */
+}
+
+
+.image-over-side-2 {
+  position: absolute;
+  top: 6rem;
+  right: 3rem;
+  width: 9%; /* Adjust width as needed */
+  height: 50%; /* Adjust height as needed */
+  background: url('./images/Theo\ \(1\).png') no-repeat center center; /* Use your image path */
+  background-size: contain; /* Ensure the image is fully visible and maintains its aspect ratio */
+  background-position: center center; /* Center the image within the div */
+  z-index: 5; /* Place it behind other content */
+  /* Optional: Add blur effect if needed */
+  /* Optional: Adjust opacity if needed */
+}
+
+.button-container {
+  margin-top:3rem;
+  display: flex;
+  justify-content: center; /* Centers the button horizontally */
+  align-items: center; /* Centers the button vertically (if needed) */
+  width: 100%; /* Ensure the container takes the full width */
+}
+
+.button {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color); /* Text color */
+  background: linear-gradient(90deg, #FFC700, #FFC700); /* Gradient using shades of #003C71 */ /* Gradient using shades of #003C71 */
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+ 
+margin-top: 2rem;
+max-width: 250px;
+  text-align: center; /* Center text */
+}
+
+.button i {
+  margin-left: 0.8rem; /* Space between text and icon */
+  font-size: 1.8rem; /* Adjust icon size as needed */
+}
+
+.button:hover {
+ /* Slightly enlarge on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.button:active {
+ /* Slightly shrink on click */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Revert to original shadow */
+}
+
+
+
+
+
+
+.services-section {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+  background-color: var(--white);
+  padding: 12rem 10rem;
+  flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+.image-over-side-3 {
+  position: absolute;
+  bottom: -18rem;
+  left: 3rem;
+  width: 15%; /* Adjust width as needed */
+  height: 60%; /* Adjust height as needed */
+  background: url('./images/Theo\'s\ soft\ side.png') no-repeat center center; /* Use your image path */
+  background-size: contain; /* Ensure the image is fully visible and maintains its aspect ratio */
+  background-position: center center; /* Center the image within the div */
+  z-index: 5; /* Place it behind other content */
+  /* Optional: Add blur effect if needed */
+  /* Optional: Adjust opacity if needed */
+}
+
+.services-left {
+  flex: 1;
+  margin-right: 2rem;
+}
+
+.collage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.collage-item {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.collage .two {
+  display: list-item;
+}
+
+.collage .three {
+  display: list-item;
+}
+
+.collage .four{
+display: list-item;
+}
+
+.services-right {
+  flex: 1;
+ 
+  
+}
+
+.services-right h1 {
+  font-size: 4rem;
+  color: var(--color); /* Primary color */
+  margin-right: 1rem;
+  position: relative; /* Required for positioning ::after pseudo-element */
+}
+
+.services-right h1::after {
+  content: "";
+  position: absolute;
+  left: 0%;
+  text-align: center;
+  bottom: -0.9rem; /* Position the underline just below the text */
+  width: 45%;
+  height: 0.4rem; /* Thickness of the underline */
+  background: linear-gradient(90deg, 
+            #FF688B,
+            #FF688B); /* Gradient with your brand colors */
+  border-radius: 5px; /* Rounded corners for the underline *//* Place underline behind any content inside .services-right */
+}
+
+.services-right p {
+  font-size: 1.4rem;
+  color: #6d6b6b; /* Darker text color for readability */
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  line-height: .5cm;
+}
+
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  margin-top: 8rem;
+}
+
+.carousel-icon {
+  background-color: var(--color);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-icon:hover {
+  background-color: var(--amber); /* Change to a hover color */
+}
+.services-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.card-new {
+  border: 1px solid #ddd; /* Border around the card */
+  border-radius: 8px; /* Rounded corners */
+  padding: 1rem; /* Padding inside the card */
+  text-align: left; /* Align text to the left */
+  background: #fff; /* Background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.card-header {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  margin-bottom: 0rem; /* Space between heading and paragraph */
+}
+.card-icon-new {
+  width: 40px;
+  height: 40px;
+}
+
+.card-header h3 {
+  margin: 0;
+  text-align: left;
+  font-size: 1.6rem;
+  color: var(--color); /* Primary color */
+  flex: 1; /* Allow heading to take up remaining space */
+}
+
+.card-header i {
+  font-size: 1.5rem; /* Adjust size as needed */
+  color: var(--color); /* Use primary color or another color */
+  cursor: pointer; /* Optional: pointer cursor for interactivity */
+  margin-right: 2rem; /* Space between heading and icon */
+}
+
+.card-new p {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #6d6b6b;
+}
+
+
+
+.image-over-side-5 {
+  position: absolute;
+  top: -15rem;
+  right: 4rem;
+  width: 25%; /* Adjust width as needed */
+  height: 60%; /* Adjust height as needed */
+  background: url('./images/21-Photoroom-removebg-preview.png') no-repeat center center; /* Use your image path */
+  background-size: contain; /* Ensure the image is fully visible and maintains its aspect ratio */
+  background-position: center center; /* Center the image within the div */
+  z-index: 5; /* Place it behind other content */
+  /* Optional: Add blur effect if needed */
+  /* Optional: Adjust opacity if needed */
+}
+
+
+
+.facilities-section {
+  padding: 8rem 12rem;
+  background-color: white; /* Background color */
+}
+
+.facilities-section-over {
+  background: url('./images/home-image.png') no-repeat center center; /* Use your image path */
+  background-size: contain; /* Ensure the image is fully visible and maintains its aspect ratio */
+  background-position: center center; /* Center the image within the div */
+  height: 100%; /* Set the height to 100% */
+  width: 100%; /* Set the width to 100% */
+ /* Add a blur effect (adjust the value as needed) */
+  z-index: -5; /* Place it behind other content */
+  /* Optional: Adjust opacity if needed */
+}
+
+.image-over-side-4 {
+  position: absolute;
+  bottom: -25rem;
+  right: 4rem;
+  width: 25%; /* Adjust width as needed */
+  height: 60%; /* Adjust height as needed */
+  background: url('./images/21-Photoroom-removebg-preview.png') no-repeat center center; /* Use your image path */
+  background-size: contain; /* Ensure the image is fully visible and maintains its aspect ratio */
+  background-position: center center; /* Center the image within the div */
+  z-index: 5; /* Place it behind other content */
+  /* Optional: Add blur effect if needed */
+  /* Optional: Adjust opacity if needed */
+}
+.facilities-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.facilities-header {
+  text-align: center;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.facilities-header h1 {
+  font-size: 4rem;
+  color: var(--color); /* Primary color */
+  margin-right: 1rem;
+  position: relative; /* For positioning the pseudo-element */
+}
+
+.facilities-header h1::after {
+  content: "";
+  position: absolute;
+  left: 39%;
+  text-align: center;
+  bottom: -0.9rem; /* Position the underline just below the text */
+  width: 22.5%;
+  height: 0.4rem; /* Thickness of the underline */
+  background: linear-gradient(90deg, 
+              #FF688B, 
+              #FF688B); /* Gradient with your brand colors */
+  border-radius: 5px; /* Rounded corners for the underline */
+}
+
+.facilities-header p {
+  font-size: 1.6rem;
+  color: #666; /* Text color */
+  margin: 3rem 0;
+}
+
+.facilities-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards in one row */
+  gap: 5rem;
+ 
+  margin-top: 5rem;
+}
+
+
+.card-facility {
+  background: #fff; /* Card background */
+  padding: 1.5rem;
+ 
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 191, 255, 0.7);  /* Subtle shadow */
+  text-align: left;
+}
+
+.card-icon-facilities {
+  width: 50px;
+  height: 50px;
+  padding: 1rem;
+ 
+  background-color: var(--white);
+  border-radius: 15px;
+ margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.card-facility h3 {
+  font-size: 1.9rem;
+   padding: 0 2rem;
+  color: var(--color);
+  margin-bottom: 0.5rem;
+}
+
+.card-facility p {
+  font-size: 1.5rem;
+  color: #6d6b6b;
+  text-align: justify; /* Align left */
+
+  padding: 0 2rem;
+  width: 360px;
+}
+
+
+
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 6rem;
+  
+  background-color: var(--white); /* Primary color */
+  border-radius: 50%;
+  color:var(--color); /* Icon color */
+  text-decoration: none;
+  font-size: 2.5rem;
+  position: relative;
+  top: 5rem;
+  padding: 2rem 4rem;
+  border-radius: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icon-button i {
+  display: inline-block;
+  vertical-align: middle;
+  
+}
+
+
+
+.contact-section {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  padding: 10rem 12rem;
+  gap: 2rem;
+  background-color: white; /* Light background color for the section */
+  border-radius: 8px; /* Rounded corners for the section */
+}
+
+.contact-info, .contact-form {
+  flex: 1;
+  min-width: 300px; /* Ensure items are not too small on smaller screens */
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-info h2 {
+
+  font-size: 4rem;
+  color: var(--color); /* Primary color */
+  margin-bottom: 1rem; /* Increased margin to better show the underline */
+  position: relative; /* Ensure the ::after pseudo-element is positioned relative to the h1 */
+  padding-bottom: 0.5rem; /* Added padding to provide space for the underline */
+}
+.contact-info h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0; /* Positioned at the bottom of the padding area */
+  width: 60%;
+  height: 0.4rem; /* Thickness of the underline */
+  background: linear-gradient(90deg, 
+              #FF688B, 
+              #FF688B); /* Gradient with your brand colors */
+  border-radius: 5px; /* Rounded corners for the underline */
+ /* Ensure the underline is behind the text */
+}
+
+.contact-icon {
+  width: 2.4rem; /* Adjust the size as needed */
+  height: 2.4rem;
+  margin-right: 10px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  color: #6d6b6b;
+  margin-bottom: .5rem; /* Space between contact items */
+}
+
+.contact-item img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.contact-item p {
+  margin: 0; /* Ensure the paragraph aligns properly with the icon */
+  font-size: 1.6rem; /* Adjust text size as needed */
+}
+
+/* Talk to Professionals Button */
+.talk-to-pros-btn {
+  color: var(--color); /* Primary text color */
+  background: #ffffff; /* Solid white background */
+  border: 2px solid #F2F4EF; /* Light border color */
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+max-width: 250px;
+  display: block; /* Block-level element */
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.talk-to-pros-btn:hover {
+  background-color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.map-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.map-container iframe {
+  max-width: 100%;
+  height: 40vh;
+  border: 0;
+}
+
+/* Contact Modal Styles */
+.contact-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+.contact-modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  max-width: 500px; /* Maximum width */
+  border-radius: 10px;
+}
+
+.contact-close {
+  color: #aaa;
+  float: right;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.contact-modal-content h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--color);
+}
+
+.contact-close:hover,
+.contact-close:focus {
+  color: black;
+}
+
+/* Form Styles */
+.contact-modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-modal form label {
+  margin-top: 10px;
+  font-size: 1.4rem;
+  color: var(--color);
+}
+
+.contact-modal form input,
+.contact-modal form textarea {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-modal form button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #00BFFF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.contact-modal form button:hover {
+  background-color: #007BBF;
+}
+
+.contact-form {
+  background-color: white;
+  padding: 5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle box-shadow */
+  border-radius: 8px; /* Optional: Rounded corners for a smoother look */
+}
+.contact-form h2 {
+  padding: 1rem 0rem;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--color); /* Text color */
+ 
+  width: 50%;
+  margin-top: -2rem;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+ /* Subtle shadow */
+  transition: transform 0.2s ease-in-out;
+}
+
+
+
+
+.contact-form .form-group {
+  display: flex;
+
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-form label {
+  font-size: 1.6rem;
+  color: var(--color);
+  padding: 1rem 0;
+}
+
+.contact-form input, .contact-form textarea {
+  font-size: 1.4rem;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.contact-form textarea {
+  resize: vertical; /* Allow vertical resizing only */
+}
+
+.send-button {
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color);
+  background: linear-gradient(90deg, #FFC700, #FFC700);
+  border: none;
+  border-radius: 8px;
+  margin-top: 2rem;
+  cursor: pointer;
+  width: 100%;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.send-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.send-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+.footer-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7rem 12rem;
+  background-color: var(--white); /* Background color */
+  color: var(--color); /* Primary text color */
+  background: linear-gradient(90deg, #002a4f, #003C71, #005092); /* Gradient background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+.footer-left {
+  flex: 1;
+  max-width: 40%;
+}
+
+.footer-left img {
+  width: 250px;
+  border-radius: 15px;
+  background-color: white; /* Adjust as needed */
+}
+
+.footer-info {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+  margin-left: .5rem;
+  color: white;
+  font-weight: 500;
+}
+
+.footer-right {
+  display: flex;
+  gap: 2rem;
+  margin-left: -2rem;
+  margin-top: -7rem;
+  flex-direction: column;
+}
+
+.footer-right h2 {
+  font-size: 2rem;
+  color: var(--white);
+}
+.social-media {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.social-icon {
+  color: var(--white); /* Primary color for icons */
+  font-size: 2rem; /* Adjust size as needed */
+  padding-right: 1rem;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--amber); /* Change to your desired hover color */
+}
+
+
+
+.quick-links {
+  color: white; 
+  margin-left: -7rem;/* Primary text color */
+}
+
+.quick-links h4 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.quick-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quick-links ul li {
+  margin-bottom: 0.5rem;
+}
+
+.quick-links ul li a {
+  color: white; /* Primary color for links */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.4rem;
+  padding-top: 1rem;
+  transition: color 0.3s ease;
+}
+
+.quick-links ul li a:hover {
+  color: #6d6b6b; /* Change to your desired hover color */
+}
+
+
+
+.footer-copyright {
+  width: 100%;
+  padding: 1.5rem 0;
+  background-color: #002a4f; /* Dark background color */
+  color: #fff; /* White text color */
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 400;
+  border-top: 1px solid #003C71; /* Subtle border at the top */
+}
+
+.footer-copyright p {
+  margin: 0;
+}
+
+.footer-copyright a {
+  color: #00BFFF; /* Link color */
+  text-decoration: none;
+  font-weight: 600; /* Slightly bolder for emphasis */
+  transition: color 0.3s ease;
+}
+
+.footer-copyright a:hover {
+  color: #FF688B; /* Change color on hover */
+}
